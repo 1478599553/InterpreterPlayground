@@ -14,11 +14,6 @@ def main(): Unit = {
   val y = Exp.Lam(Exp.Sym("x"), Exp.Lam(Exp.Sym("y"), Exp.Sym("y")))
 }
 
-enum Box[+T](contents: T):
-  case IntBox(n: Int) extends Box[Int](n)
-  case BoolBox(b: Boolean) extends Box[Boolean](b)
-end Box
-
 enum Exp():
   case Sym(s: String) extends Exp
   case Lam(symbol: Exp.Sym,exp: Exp) extends Exp
